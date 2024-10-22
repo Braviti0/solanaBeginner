@@ -57,3 +57,30 @@ get the above two values by checking your mint and transfer tx hashes on the exp
 
 ## Candy Machine UI
 
+The UI for the candy machine comes from this site:
+
+https://github.com/metaplex-foundation/candy-machine-ui ./candy-machine-ui/
+
+Rename the file .env.example to .env. After changing the file name, you can change the values in there to the following:
+
+
+`REACT_APP_CANDY_MACHINE_ID=<YOUR_CANDY_MACHINE_PUBKEY>
+REACT_APP_SOLANA_NETWORK=devnet
+REACT_APP_SOLANA_RPC_HOST=<YOUR_QUICKNODE_DEVNET_ENDPOINT>`
+
+
+change the scripts segment of package.json to the following:
+
+`  "scripts": {
+    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && craco start",
+    "lint": "prettier -c 'src/**/*.{ts,tsx}' && npm run lint:eslint",
+    "lint:eslint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "prettier --write 'src/**/*.{ts,tsx}' && eslint --fix 'src/**/*.{ts,tsx}'",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject"
+  },`
+
+  this is to support the outdated UI code.
+
+replace the placeholders in the .env file such as the candy machine id and the rpc url
