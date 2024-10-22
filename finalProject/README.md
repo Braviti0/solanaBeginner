@@ -84,3 +84,5 @@ change the scripts segment of package.json to the following:
   this is to support the outdated UI code.
 
 replace the placeholders in the .env file such as the candy machine id and the rpc url
+
+you need to get an rpc url from quicknode or from elsewhere
